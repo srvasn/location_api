@@ -1,0 +1,1 @@
+web: gunicorn LOCATION_API.wsgi --log-file -
