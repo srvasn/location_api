@@ -1,4 +1,5 @@
-from rest_framework.authentication import BasicAuthentication, SessionAuthentication
+from rest_framework.authentication import BasicAuthentication
+
 
 # __author__ = 'Sourav Banerjee'
 # __email__ = ' srvasn@gmail.com'

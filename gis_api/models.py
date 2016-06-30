@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from autoslug import AutoSlugField
 from django_extensions.db import fields as ext_fields
 
+
 # __author__ = 'Sourav Banerjee'
 # __email__ = ' srvasn@gmail.com'
 
@@ -23,7 +24,8 @@ class Region(models.Model):
 
 
 class Vendor(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile', help_text='User associated with Vendor')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile',
+                                help_text='User associated with Vendor')
     name = models.CharField(max_length=255, help_text='Name of the vendor')
     phone = models.CharField(max_length=15, help_text='Phone number of the vendor')
     lang = models.CharField(max_length=20, help_text='Language preferred by the vendor')

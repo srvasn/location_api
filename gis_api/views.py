@@ -11,6 +11,7 @@ from gis_api.serializers import RegionSerializer, UserSerializer
 from gis_api.permissions import IsStaffOrTargetUser, IsOwnerOrReadOnly
 from gis_api.authentication import QuietBasicAuthentication
 
+
 # __author__ = 'Sourav Banerjee'
 # __email__ = ' srvasn@gmail.com'
 
@@ -23,7 +24,7 @@ class AuthView(APIView):
     serializer_class = UserSerializer
 
     def get(self, request, *args, **kwargs):
-        #returning username on successful registration
+        # returning username on successful registration
         return Response(self.serializer_class(request.user).data)
 
 
@@ -43,6 +44,7 @@ class UserView(viewsets.ModelViewSet):
             return (AllowAny(),)
         else:
             return (IsStaffOrTargetUser(),)
+
 
 class RegionList(generics.ListCreateAPIView):
     """
@@ -103,6 +105,7 @@ class PointInRegions(APIView):
         if result_set:
             return Response(list(result_set), status=status.HTTP_200_OK)
         return Response(None, status=status.HTTP_404_NOT_FOUND)
+
 
 user_view = UserView.as_view({'get': 'list', 'post': 'create', })
 user_detail = UserView.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'})

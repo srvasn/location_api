@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url, include, patterns
 from django.contrib import admin
-from LOCATION_API import settings
 
+from LOCATION_API import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^docs/', include('rest_framework_swagger.urls')),
 ]
 urlpatterns += patterns('',
-        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
-    )
+                        url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
+                            {'document_root': settings.STATIC_ROOT}),
+                        )

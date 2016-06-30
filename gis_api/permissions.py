@@ -1,5 +1,6 @@
 from rest_framework import permissions
 
+
 # __author__ = 'Sourav Banerjee'
 # __email__ = ' srvasn@gmail.com'
 #
@@ -8,6 +9,7 @@ class IsStaffOrTargetUser(permissions.BasePermission):
     """
     Used to govern access for generic User ModelViewSet
     """
+
     def has_permission(self, request, view):
         return view.action == 'retrieve' or request.user.is_staff
 
@@ -19,6 +21,7 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
     """
     Governs access to user created records. Staff users can view everything.
     """
+
     def has_object_permission(self, request, view, obj):
         # Read permissions are allowed to any request,
         # so we'll always allow GET, HEAD or OPTIONS requests.

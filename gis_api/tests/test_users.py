@@ -3,8 +3,8 @@ from rest_framework import status
 from rest_framework.test import APITestCase
 from django.contrib.auth.models import User
 
-
 from gis_api.serializers import UserSerializer
+
 
 # __author__ = 'Sourav Banerjee'
 # __email__ = ' srvasn@gmail.com'
@@ -13,6 +13,7 @@ class AccountTests(APITestCase):
     """
     Test if we can successfully create a user
     """
+
     def setUp(self):
         # self.superuser = User.objects.create_superuser("derek", "derek@wind.com", "testpassword")
         # self.client.login(username="derek", password="testpassword")
@@ -28,6 +29,7 @@ class ReadUserTest(APITestCase):
     """
     Test if we can successfully read user list and user detail
     """
+
     def setUp(self):
         self.superuser = User.objects.create_superuser('john', 'john@snow.com', 'johnpassword')
         self.client.login(username='john', password='johnpassword')
@@ -46,6 +48,7 @@ class UpdateUserTest(APITestCase):
     """
     Test if we can update an existing user using PUT
     """
+
     def setUp(self):
         self.superuser = User.objects.create_superuser('john', 'john@snow.com', 'johnpassword')
         self.client.login(username='john', password='johnpassword')
@@ -64,6 +67,7 @@ class DeleteUserTest(APITestCase):
     """
     Test if we can delete a user
     """
+
     def setUp(self):
         self.superuser = User.objects.create_superuser('john', 'john@snow.com', 'johnpassword')
         self.client.login(username='john', password='johnpassword')

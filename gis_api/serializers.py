@@ -4,11 +4,12 @@ from django.contrib.auth.models import User
 
 from gis_api.models import Region, Vendor
 
+
 # __author__ = 'Sourav Banerjee'
 # __email__ = ' srvasn@gmail.com'
 
 class UserSerializer(rest_serializers.ModelSerializer):
-    name = rest_serializers.CharField(source='profile.name',help_text='Name of the user')
+    name = rest_serializers.CharField(source='profile.name', help_text='Name of the user')
     phone = rest_serializers.CharField(source='profile.phone', help_text='Phone number of the user')
     lang = rest_serializers.CharField(source='profile.lang', help_text='Language of communication')
     curr = rest_serializers.CharField(source='profile.curr', help_text='Currency preferred')

@@ -16,44 +16,45 @@ class RegionTests(APITestCase):
     """
     Test if a registered user can create a view
     """
+
     def setUp(self):
         self.user = User.objects.create_user("derek", "derek@wind.com", "testpassword")
         self.client.login(username="derek", password="testpassword")
         self.data = \
             {
-            "type": "Feature",
-            "geometry": {
-                "type": "Polygon",
-                "coordinates": [
-                    [
+                "type": "Feature",
+                "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
                         [
-                            20.6705551147461,
-                            -20.89135645852043
-                        ],
-                        [
-                            20.64171600341797,
-                            20.89288988217029
-                        ],
-                        [
-                            -20.63690948486328,
-                            20.880110226947934
-                        ],
-                        [
-                            -20.549583435058,
-                            -20.214077038175
-                        ],
-                        [
-                            20.6705551147461,
-                            -20.89135645852043
+                            [
+                                20.6705551147461,
+                                -20.89135645852043
+                            ],
+                            [
+                                20.64171600341797,
+                                20.89288988217029
+                            ],
+                            [
+                                -20.63690948486328,
+                                20.880110226947934
+                            ],
+                            [
+                                -20.549583435058,
+                                -20.214077038175
+                            ],
+                            [
+                                20.6705551147461,
+                                -20.89135645852043
+                            ]
                         ]
                     ]
-                ]
-            },
-            "properties": {
-                "name": "Snowland",
-                "price": 200
+                },
+                "properties": {
+                    "name": "Snowland",
+                    "price": 200
+                }
             }
-        }
 
     def test_user_can_create_region(self):
         response = self.client.post(reverse("region-list"), self.data, format='json')
@@ -64,6 +65,7 @@ class ReadRegionTest(APITestCase):
     """
     Test if a registered user can read the region list and region details
     """
+
     def setUp(self):
         self.superuser = User.objects.create_superuser('john', 'john@snow.com', 'johnpassword')
         self.client.login(username='john', password='johnpassword')
@@ -82,6 +84,7 @@ class UpdateRegionTest(APITestCase):
     """
     Test if a user can update an existing region
     """
+
     def setUp(self):
         self.user = User.objects.create_superuser('john', 'john@snow.com', 'johnpassword')
         self.client.login(username='john', password='johnpassword')
@@ -132,6 +135,7 @@ class DeleteRegionTest(APITestCase):
     """
     Test if a user can delete an existing region
     """
+
     def setUp(self):
         self.superuser = User.objects.create_superuser('john', 'john@snow.com', 'johnpassword')
         self.client.login(username='john', password='johnpassword')
