@@ -1,5 +1,6 @@
 """
 Settings for Django GeoLocation API
+Uses Postgres with the PostGeos addon
 Sourav Banerjee
 srvasn@gmail.com
 """
