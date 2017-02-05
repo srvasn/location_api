@@ -79,3 +79,7 @@ _https://www.imagescape.com/blog/2011/09/21/geo-django-quickstart/_
 **Contact**
 
 Fire an email to srvasn@gmail.com in case you have any queries.
+
+**License**
+
+This project is free to be used, provided due credits are given.
