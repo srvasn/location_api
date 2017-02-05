@@ -75,3 +75,7 @@ make sure GeoLocation queries are supported. More information about setting
 up a PostgreSQL GeoDjango project can be found here.
 
 _https://www.imagescape.com/blog/2011/09/21/geo-django-quickstart/_
+
+**Contact**
+
+Fire an email to srvasn@gmail.com in case you have any queries.
